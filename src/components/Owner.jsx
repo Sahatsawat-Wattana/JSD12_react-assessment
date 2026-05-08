@@ -13,7 +13,7 @@ export default function Owner() {
           <div className="relative group">
             <div className="absolute inset-0 bg-teal-200 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
             <img
-              src="src/assets/Alexander.webp"
+              src="../assets/Alexander.webp"
               alt="Alexander"
               className="relative w-48 h-48 md:w-56 md:h-56 object-cover rounded-full shadow-sm border-4 border-white"
             />
