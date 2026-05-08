@@ -13,7 +13,7 @@ export default function Owner() {
           <div className="relative group">
             <div className="absolute inset-0 bg-teal-200 rounded-full blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
             <img
-              src="https://static.wikia.nocookie.net/succession/images/b/b2/Alexander_Skarsg%C3%A5rd.jpg/revision/latest?cb=20230705083041"
+              src="public/Alexander.webp"
               alt="Alexander"
               className="relative w-48 h-48 md:w-56 md:h-56 object-cover rounded-full shadow-sm border-4 border-white"
             />
