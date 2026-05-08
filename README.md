@@ -1,32 +1,24 @@
-## Vite + React Starter
+explain how and why you divided the app’s UI into components
 
-A concise starter codebase for React apps built with Vite. It ships with modern tooling, Tailwind CSS v4, and basic project scaffolding so you can start building immediately.
+ แยก component ออกเป็น NavBar Home และ Owner ก่อน จากนั้นเห็นถึงการปรากฏของปุ่มในทุกหน้า home ที่มีการกด จึงแยกออกมาเป็นอีก component หนึ่ง เพราะมีการใช้ซ้ำบ่อย
 
-### What's Included
-- **Vite Build Tool:** Fast dev server, optimized builds, and zero-config defaults via `vite.config.js`.
-- **React 19:** Latest React and `react-dom` set up with `@vitejs/plugin-react`.
-- **Tailwind CSS v4:** Tailwind configured using `@tailwindcss/vite` with styles in `src/index.css`.
-- **ESLint:** Base config in `eslint.config.js` with React Hooks and React Refresh plugins.
-- **Starter Files:** `index.html`, `src/main.jsx`, `src/App.jsx`, `src/assets/`, and `public/` ready to customize.
-- **Deployment Config:** `vercel.json` for path resolution when deploying to Vercel.
+what state variables did you created and why?
 
-### Scripts
-- `dev`: Start the Vite dev server.
-- `build`: Create a production build.
-- `preview`: Preview the production build locally.
-- `lint`: Run ESLint on the project.
+สร้าง state variable ทั้งหมด 6 ตัว โดย isUserHome นำมาเพื่อแสดงหน้า USer Home และ isAdminHome นำมาแสดงหน้า Admin Home ItemList สร้างมาเพื่อเก็บข้อมูลี่ได้จาก API name,lastname,position สร้างมาเพื่อเก็บข้อมูลเพื่อส่งต่อไป API เนื่องจากเป็นตัวแปรที่มาจากการกรอกข้อมูล และส่งต่อข้อมูลที่มีการเแปลี่ยนแปลง
 
-### Project Structure
-```
-vite-react-app/
-├─ index.html
-├─ eslint.config.js
-├─ vite.config.js
-├─ vercel.json
-├─ public/
-└─ src/
-	├─ main.jsx
-	├─ App.jsx
-	├─ index.css
-	└─ assets/
-```
+
+How did you manage these states? Was it via Passing Props or React Context, why? 
+
+เนื่องจากออกแบบให้ทำทุกอย่างในหน้า Home และมี component ย่อยแค่ button เท่านั้น จึงใช้แค่ passing props จึงเพียงพอ
+
+Explain how and why you used the useEffect hook?
+
+นำมาใช้กับ fetch กับการเชื่อมต่อ api เพื่อส่งต่อข้อมูลหลังจากมีการ render UI component
+
+Explain whether you could and why, you would use fetch() without using useEffect?
+
+ถ้านำ fetch มาใช้แบบไม่มี useEffect สามารถใช้ได้กับ eventhandler function ให้ทุกการกดปุ่มของ user เป็นตัว trigger การ fetch แทนการใช้ useEffect ในการเปลี่ยนค่าได้ แต่ต้องทำให้ function เป็น asynchronus function ตามที่ได้ใช้ไปใน handledelete ที่ให้การกดปุ่ม delete เป็นตัว trigger
+
+Explain whether the use of fetch() should be synchronous or asynchronous JavaScript, why? 
+
+ควรเป็น asynchronus javascript เพื่อให้ render UI ส่วนอื่นๆ ได้ก่อนโดยไม่ต้องรอการส่งผ่านข้อมูลผ่าน API 
